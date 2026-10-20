@@ -1,0 +1,279 @@
+/* Color Palette
+#C9DDF2 - Ocean Blue
+#D9CBB8 - Sand
+#B8C4A9 - Sage
+#C9A89A - Dusty Clay
+#E4D8B4 - Soft Wheat
+#F1E7D3 - Cream
+#F7F5F0 - Soft Off-White
+*/
+
+/* Global styles 
+------------------------------------*/
+
+/* border box fix */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Body
+------------------------------------*/
+body {
+  margin: 0;
+  padding: 100px 30px 30px;
+  min-height: 100vh;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #6f665e;
+
+  background: #f1e7d3;
+
+  position: relative;
+}
+
+.content-wrap {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.column-narrow {
+  width: 30%;
+  float: left;
+  padding-right: 3%;
+  min-height: 175px;
+}
+
+.column-wide {
+  width: 70%;
+  float: left;
+  min-height: 225px;
+}
+
+header h1,
+header h2 {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "IBM Plex Serif", serif;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+.resume {
+  background: #f7f5f0;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+header,
+.work,
+.education,
+footer {
+  margin-bottom: 20px;
+  border-radius: 15px;
+  scroll-margin-top: 100px;
+}
+
+/* Background Image Panels
+------------------------------------*/
+.image-panel {
+  width: 100%;
+  padding: 35px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.intro-background {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)),
+    url("../images/camping.jpg") center / cover no-repeat;
+}
+
+.work-background {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)),
+    url("../images/office.jpg") center / cover no-repeat;
+}
+
+.education-background {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25)),
+    url("../images/school.webp") center / cover no-repeat;
+}
+
+/* Header
+------------------------------------*/
+header {
+  background: rgba(201, 168, 154, 0.8);
+  color: #3f3a35;
+}
+
+header .column-wide {
+  padding-top: 35px;
+}
+
+.profile-img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.image-panel header,
+.image-panel .work {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Navigation
+------------------------------------*/
+.navigation {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 60px);
+  max-width: 1000px;
+  background: #f7f5f0;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 1000;
+  border: 2px solid #000000;
+}
+
+.navigation a {
+  display: inline-block;
+  padding: 10px 15px;
+  color: #3f3a35;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+.section-divider {
+  clear: both;
+  border: 0;
+  border-top: 2px solid #6f665e;
+  margin: 30px 0;
+}
+
+/* Work Experience
+------------------------------------*/
+.work {
+  background: rgba(201, 221, 242, 0.9);
+}
+
+/* Education
+------------------------------------*/
+.education {
+  background: rgba(228, 216, 180, 0.8);
+  color: #3f3a35;
+}
+
+/* Falling Leaves Background
+------------------------------------*/
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: url("../images/leaves.png") repeat;
+
+  background-size: 700px auto;
+  opacity: 0.8;
+
+  pointer-events: none;
+  z-index: 0;
+
+  animation: falling-leaves 150s linear infinite;
+}
+
+@keyframes falling-leaves {
+  from {
+    background-position: 0 -500px;
+  }
+
+  to {
+    background-position: 120px 1000px;
+  }
+}
+
+/* Attached Leaves Background
+------------------------------------*/
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(241, 231, 211, 0.95), rgba(241, 231, 211, 0.98)),
+    url("../images/backgroundLeaves.png");
+
+  background-size: cover;
+  background-position: center;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.resume {
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer 
+------------------------------------*/
+footer {
+  background: #d9cbb8;
+  color: #3f3a35;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.contact-info a {
+  padding: 10px;
+  display: inline-block;
+}
+
+.contact-info i {
+  margin-right: 5px;
+}
+
+/* Overwrites 
+------------------------------------*/
+.image-panel header,
+.image-panel .work,
+.image-panel .education {
+  max-width: 1000px;
+  margin: 0 auto;
+}
